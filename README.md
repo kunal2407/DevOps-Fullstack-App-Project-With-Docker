@@ -19,11 +19,6 @@
             2. npm install
             3. npm start
 # Step by step explaination
-# Employee Management System
-
-It's an application to add and view employee Details.
-
-Referred git repo : https://github.com/shubhamkalsait/devops-fullstack-app.git
 
 ## Getting started
 
