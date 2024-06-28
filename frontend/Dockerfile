@@ -1,24 +1,32 @@
-# Use the official Ubuntu base image
-FROM ubuntu:latest
+# Use the official Ubuntu base image for a supported version
+FROM ubuntu:bionic
 
 # Set the working directory inside the container
 WORKDIR /usr/src/app
 
-# Install Node.js and npm
-RUN sudo apt-get update && \
-    sudo apt-get install -y nodejs npm && \
-    sudo npm install -g n && \
-    sudo n 14.17.0 && \
-    node -v
+# Install curl and Node.js setup script dependencies
+RUN apt-get update && \
+    apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
+
+# Install Node.js (which includes npm)
+RUN apt-get install -y nodejs
+
+# Install n globally (if needed)
+RUN npm install -g n
+
+# Install Node.js version 14.17.0 using n
+RUN n 14.17.0
 
 # Copy package.json and package-lock.json files
 COPY package*.json ./
 COPY .env ./
-# Copy the rest of the application code
-COPY . .
 
 # Install application dependencies
 RUN npm install
+
+# Copy the rest of the application code
+COPY . .
 
 # Expose port 3000 to the outside world
 EXPOSE 3000
