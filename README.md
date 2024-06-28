@@ -44,11 +44,11 @@ Installing Node.js to run React.js:
 n is a Node.js version manager. It allows you to easily install, manage, and switch between multiple versions of Node.js on your system. With n, you can install different versions of Node.js side by side and quickly switch between them as needed for your projects or development environments.
 Clone git repo:
 ```shell
- git clone https://github.com/shubhamkalsait/devops-fullstack-app.git
+ git clone https://github.com/Shantanu20000/DevOps-Fullstack-App-Project-With-Docker.git
 ```
 Go to frontend dir after all this installation and run npm start
 ```shell
- cd devops-fullstack-app/frontend/
+ cd DevOps-Fullstack-App-Project-With-Docker/frontend/
  sudo vim .env #REACT_APP_SERVER_URL=http://localhost:8080/employees --> REACT_APP_SERVER_URL=http://backend_pub_ip:8080/employees
  npm install #This command is used to install dependencies listed in the package.json file of a Node.js project.
  npm start   #This command is typically used to start the application defined in the scripts section of the package.json file
@@ -101,11 +101,11 @@ sudo snap install go --classic
 
 Clone git repo:
 ```shell
-git clone https://github.com/shubhamkalsait/devops-fullstack-app.git
+git clone https://github.com/Shantanu20000/DevOps-Fullstack-App-Project-With-Docker.git
 ```
 Go to backend dir after all this installation and run main.go
 ```shell
- cd devops-fullstack-app/backend/ 
+ cd DevOps-Fullstack-App-Project-With-Docker/backend/ 
  DB_HOST=<POSTGRES_HOST> DB_USER=<POSTGRES_USER> DB_PASSWORD=<POSTGRES_PASSWORD> DB_NAME=<POSTGRES_DB_NAME> DB_PORT=<POSTGRES_PORT> ALLOWED_ORIGINS=<ALLOWED_ORGINS_VALUE> go run main.go
  # sudo DB_HOST=localhost DB_USER=test DB_PASSWORD=1234 DB_NAME=employees DB_PORT=5432 ALLOWED_ORIGINS="http://frontend_ip:3000" go run main.go
 ```
