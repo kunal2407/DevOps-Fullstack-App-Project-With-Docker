@@ -1,30 +1,31 @@
-# Use the official Ubuntu base image
+# Use Ubuntu 20.04 as the base image
 FROM ubuntu:latest
 
 # Set environment variables for non-interactive apt installs
 ENV DB_HOST=<POSTGRES_HOST> 
 ENV DB_USER=<POSTGRES_USER> 
 ENV DB_PASSWORD=<POSTGRES_PASSWORD> 
-ENV DB_NAME=<POSTGRES_DB_NAME> 
+ENV DB_NAME=<POSTGRES_DB_NAME>
+# ENV DB_PORT=<POSTGRES_PORT> Here we mention our Database which created in it that is (employee)
 ENV DB_PORT=<POSTGRES_PORT> 
+# ENV ALLOWED_ORIGINS=<ALLOWED_ORGINS_VALUE> Here We Mention our Frontend Public IP
 ENV ALLOWED_ORIGINS=<ALLOWED_ORGINS_VALUE>
-
 # Set Go environment variables
 ENV GOPATH=/go
+ENV GOROOT=/usr/local/go
 ENV PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Update and install dependencies
-RUN sudo apt-get update && \
-    sudo apt-get install -y wget git build-essential
+RUN apt-get update && \
+    apt-get install -y wget git build-essential
 
 # Install Go
-RUN sudo curl -O https://dl.google.com/go/go1.19.linux-amd64.tar.gz
-    sudo tar -xvf go1.19.linux-amd64.tar.gz
-    sudo mv go /usr/local
-    export GOROOT=/usr/local/go
-    export GOPATH=$HOME/go
-    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-    sudo snap install go --classic
+RUN wget https://golang.org/dl/go1.19.linux-amd64.tar.gz && \
+    tar -C /usr/local -xzf go1.19.linux-amd64.tar.gz && \
+    rm go1.19.linux-amd64.tar.gz
+
+# Install Go using snap (optional, uncomment if needed)
+# RUN snap install go --classic
 
 # Create the Go working directory
 RUN mkdir -p /home/ubuntu/project
