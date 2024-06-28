@@ -37,7 +37,7 @@ WORKDIR /home/ubuntu/project
 COPY . .
 
 # Copy the initialization script to the Docker entrypoint initdb.d directory
-COPY init-db.sh /docker-entrypoint-initdb.d/
+COPY init-db.sql /docker-entrypoint-initdb.d/
 
 # Expose port 8080 to the outside world
 EXPOSE 8080
