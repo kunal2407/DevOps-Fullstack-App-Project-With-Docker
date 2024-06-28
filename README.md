@@ -70,19 +70,21 @@ Login into Postgressql:
  sudo -u postgres psql
 ```
 ```
- PGPASSWORD=12345678 psql -h database-1.cj026e22o5gx.ap-south-1.rds.amazonaws.com -U postgres -d postgres -p 5432
+PGPASSWORD=12345678 psql -h database-1.cj026e22o5gx.ap-south-1.rds.amazonaws.com -U postgres -d postgres -p 5432
 ```
 After login create DB and User and grant permission to user into Postgressql:
 Here, DB_USER=test DB_PASSWORD='1234' DB_NAME=employees 
 ```shell
-CREATE DATABASE employees;                             
+CREATE DATABASE employees;
 CREATE USER test WITH PASSWORD '1234';
 GRANT ALL PRIVILEGES ON DATABASE employees TO test;
+
 \c employees
 GRANT USAGE ON SCHEMA public TO test;
 GRANT CREATE ON SCHEMA public TO test;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO test;
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO test;
+
 \q
 ```
 
