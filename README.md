@@ -69,6 +69,9 @@ Login into Postgressql:
 ```shell
  sudo -u postgres psql
 ```
+```
+ PGPASSWORD=12345678 psql -h database-1.cj026e22o5gx.ap-south-1.rds.amazonaws.com -U postgres -d postgres -p 5432
+```
 After login create DB and User and grant permission to user into Postgressql:
 Here, DB_USER=test DB_PASSWORD='1234' DB_NAME=employees 
 ```shell
