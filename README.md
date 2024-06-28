@@ -70,6 +70,7 @@ Login into Postgressql:
  sudo -u postgres psql
 ```
 After login create DB and User and grant permission to user into Postgressql:
+Here, DB_USER=test DB_PASSWORD='1234' DB_NAME=employees 
 ```shell
 CREATE DATABASE employees;                             
 CREATE USER test WITH PASSWORD '1234';
