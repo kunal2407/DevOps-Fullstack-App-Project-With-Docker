@@ -29,11 +29,8 @@ WORKDIR /home/ubuntu/project
 # Copy the Go application code to the container
 COPY . .
 
-# Build the Go application
-RUN 
-
 # Expose port 8080 to the outside world
 EXPOSE 8080
 
 # Command to run the Go application
-CMD ["./app"]
+CMD ["go", "run", "main.go"]
