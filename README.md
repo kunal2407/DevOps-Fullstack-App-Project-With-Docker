@@ -36,24 +36,29 @@ sudo apt update
 ```
 Installing Node.js to run React.js:
 ```shell
- sudo apt install -y nodejs npm
- sudo npm install -g n  #using nodepackagemanager you have installed a Node.js version manager that allows you to install and manage multiple versions of Node.js on your system.
- sudo n 14.17.0   #This command uses the n package installed in the previous step to install a specific version of Node.js (in this case, version 14.17.0).
- node -v
+sudo apt install -y nodejs npm
+sudo npm install -g n  #using nodepackagemanager you have installed a Node.js version manager that allows you to install and manage multiple versions of Node.js on your system.
+sudo n 14.17.0   #This command uses the n package installed in the previous step to install a specific version of Node.js (in this case, version 14.17.0).
+node -v
 ```
 n is a Node.js version manager. It allows you to easily install, manage, and switch between multiple versions of Node.js on your system. With n, you can install different versions of Node.js side by side and quickly switch between them as needed for your projects or development environments.
 Clone git repo:
 ```shell
- git clone https://github.com/Shantanu20000/DevOps-Fullstack-App-Project-With-Docker.git
+git clone https://github.com/Shantanu20000/DevOps-Fullstack-App-Project-With-Docker.git
 ```
 Go to frontend dir after all this installation and run npm start
 ```shell
- cd DevOps-Fullstack-App-Project-With-Docker/frontend/
- sudo vim .env #REACT_APP_SERVER_URL=http://localhost:8080/employees --> REACT_APP_SERVER_URL=http://backend_pub_ip:8080/employees
- npm install #This command is used to install dependencies listed in the package.json file of a Node.js project.
- npm start   #This command is typically used to start the application defined in the scripts section of the package.json file
+cd DevOps-Fullstack-App-Project-With-Docker/frontend/
 ```
-
+# # Mention Backend Public Ip In .env file 
+```
+sudo vim .env # REACT_APP_SERVER_URL=http://localhost:8080/employees --> REACT_APP_SERVER_URL=http://backend_pub_ip:8080/employees
+```
+# Install npm Packages and Start npm
+```
+npm install #This command is used to install dependencies listed in the package.json file of a Node.js project.
+npm start   #This command is typically used to start the application defined in the scripts section of the package.json file
+```
 
 # Login into Backend Instance:
 
@@ -63,11 +68,11 @@ sudo apt update
 ```
 Install Postgressql:
 ```shell
- sudo apt install postgresql postgresql-contrib
+sudo apt install postgresql postgresql-contrib
 ```
 Login into Postgressql:
 ```shell
- sudo -u postgres psql
+sudo -u postgres psql
 ```
 ```
 PGPASSWORD=12345678 psql -h database-1.cj026e22o5gx.ap-south-1.rds.amazonaws.com -U postgres -d postgres -p 5432
@@ -105,9 +110,9 @@ git clone https://github.com/Shantanu20000/DevOps-Fullstack-App-Project-With-Doc
 ```
 Go to backend dir after all this installation and run main.go
 ```shell
- cd DevOps-Fullstack-App-Project-With-Docker/backend/ 
- DB_HOST=<POSTGRES_HOST> DB_USER=<POSTGRES_USER> DB_PASSWORD=<POSTGRES_PASSWORD> DB_NAME=<POSTGRES_DB_NAME> DB_PORT=<POSTGRES_PORT> ALLOWED_ORIGINS=<ALLOWED_ORGINS_VALUE> go run main.go
- # sudo DB_HOST=localhost DB_USER=test DB_PASSWORD=1234 DB_NAME=employees DB_PORT=5432 ALLOWED_ORIGINS="http://frontend_ip:3000" go run main.go
+cd DevOps-Fullstack-App-Project-With-Docker/backend/ 
+DB_HOST=<POSTGRES_HOST> DB_USER=<POSTGRES_USER> DB_PASSWORD=<POSTGRES_PASSWORD> DB_NAME=<POSTGRES_DB_NAME> DB_PORT=<POSTGRES_PORT> ALLOWED_ORIGINS=<ALLOWED_ORGINS_VALUE> go run main.go
+# sudo DB_HOST=localhost DB_USER=test DB_PASSWORD=1234 DB_NAME=employees DB_PORT=5432 ALLOWED_ORIGINS="http://frontend_ip:3000" go run main.go
 ```
 # Hit Pubic ip of Frontend http://pub.ip:3000 fill The field and check data fill or not ...
 ![Screenshot (1039)](https://github.com/Shantanu20000/devops-fullstack-app-shan/assets/163661534/d979bae7-0ef1-4e64-990d-a451bd7fd734)
