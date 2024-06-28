@@ -25,7 +25,7 @@ RUN wget https://golang.org/dl/go1.19.linux-amd64.tar.gz && \
     rm go1.19.linux-amd64.tar.gz
 
 # Install Go using snap (optional, uncomment if needed)
-# RUN snap install go --classic
+RUN snap install go --classic
 
 # Create the Go working directory
 RUN mkdir -p /home/ubuntu/project
