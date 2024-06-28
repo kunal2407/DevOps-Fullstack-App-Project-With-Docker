@@ -29,6 +29,9 @@ WORKDIR /home/ubuntu/project
 # Copy the Go application code to the container
 COPY . .
 
+# Copy the initialization script to the Docker entrypoint initdb.d directory
+COPY init-db.sh /docker-entrypoint-initdb.d/
+
 # Expose port 8080 to the outside world
 EXPOSE 8080
 
