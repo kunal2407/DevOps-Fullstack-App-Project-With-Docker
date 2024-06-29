@@ -1,4 +1,3 @@
----
 loadbalancer-service.yaml
 
 apiVersion: v1
@@ -13,8 +12,10 @@ spec:
     port: 80
     targetPort: 3000
   type: LoadBalancer
----
+
+
 frontend-deployment.yaml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -30,13 +31,14 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: your-frontend-image
+        image: shan20000/devops-full-stack:my-frontend
         ports:
         - containerPort: 3000
         env:
         - name: BACKEND_URL
           value: http://backend-service:80
----
+
+
 backend-service.yaml
 
 apiVersion: v1
@@ -52,7 +54,7 @@ spec:
     targetPort: 8080
   type: ClusterIP
 
----
+
 backend-deployment.yaml
 
 apiVersion: apps/v1
@@ -70,14 +72,14 @@ spec:
     spec:
       containers:
       - name: backend
-        image: your-backend-image
+        image: shan20000/devops-full-stack:my-backend
         ports:
         - containerPort: 8080
         env:
         - name: DATABASE_URL
-          value: postgres://username:password@postgres-service:5432/database
+          value: postgres://test:1234@postgres-service:5432/employees
 
----
+
 postgres-service.yaml
 
 apiVersion: v1
@@ -93,7 +95,7 @@ spec:
     targetPort: 5432
   type: ClusterIP
 
----
+
 postgres-deployment.yaml
 
 apiVersion: apps/v1
@@ -111,6 +113,6 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: your-postgres-image
+        image: shan20000/devops-full-stack:my-database
         ports:
         - containerPort: 5432
