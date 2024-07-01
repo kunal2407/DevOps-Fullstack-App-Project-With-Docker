@@ -142,6 +142,10 @@ Go to Backend
 ```shell
 cd DevOps-Fullstack-App-Project-With-Docker/backend/
 ```
+Mention Backend Public Ip In .env file 
+```
+sudo vim .env # REACT_APP_SERVER_URL=http://localhost:8080/employees --> REACT_APP_SERVER_URL=http://backend_pub_ip:8080/employees
+```
 Build and Run Docker image of Frontend
 ```
 docker build -t my-frontend .
