@@ -114,7 +114,6 @@ cd DevOps-Fullstack-App-Project-With-Docker/backend/
 DB_HOST=<POSTGRES_HOST> DB_USER=<POSTGRES_USER> DB_PASSWORD=<POSTGRES_PASSWORD> DB_NAME=<POSTGRES_DB_NAME> DB_PORT=<POSTGRES_PORT> ALLOWED_ORIGINS=<ALLOWED_ORGINS_VALUE> go run main.go
 # sudo DB_HOST=localhost DB_USER=test DB_PASSWORD=1234 DB_NAME=employees DB_PORT=5432 ALLOWED_ORIGINS="http://frontend_ip:3000" go run main.go
 ```
-# Hit Pubic ip of Frontend http://pub.ip:3000 fill The field and check data fill or not ...
 
 # Dockerisation Of Project
 Clone git repo:
