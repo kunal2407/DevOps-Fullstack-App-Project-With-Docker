@@ -115,5 +115,39 @@ DB_HOST=<POSTGRES_HOST> DB_USER=<POSTGRES_USER> DB_PASSWORD=<POSTGRES_PASSWORD> 
 # sudo DB_HOST=localhost DB_USER=test DB_PASSWORD=1234 DB_NAME=employees DB_PORT=5432 ALLOWED_ORIGINS="http://frontend_ip:3000" go run main.go
 ```
 # Hit Pubic ip of Frontend http://pub.ip:3000 fill The field and check data fill or not ...
-![Screenshot (1039)](https://github.com/Shantanu20000/devops-fullstack-app-shan/assets/163661534/d979bae7-0ef1-4e64-990d-a451bd7fd734)
 
+# Dockerisation Of Project
+Clone git repo:
+```shell
+git clone https://github.com/Shantanu20000/DevOps-Fullstack-App-Project-With-Docker.git
+```
+Go to psql-database
+```shell
+cd DevOps-Fullstack-App-Project-With-Docker/psql-database/
+```
+Build and Run Docker image of Postgressql
+```
+docker build -t my-database .
+docker run -d -p 5432:5432 my-database
+```
+Go to Backend
+```shell
+cd DevOps-Fullstack-App-Project-With-Docker/backend/
+```
+Build and Run Docker image of Backend
+```
+docker build -t my-backend .
+docker run -d -p 8080:8080 my-backend
+```
+Go to Backend
+```shell
+cd DevOps-Fullstack-App-Project-With-Docker/backend/
+```
+Build and Run Docker image of Frontend
+```
+docker build -t my-frontend .
+docker run -d -p 3000:3000 my-frontend
+```
+# Hit Pubic ip of Frontend http://pub.ip:3000 fill The field and check data fill or not ... 
+![Screenshot (1039)](https://github.com/Shantanu20000/devops-fullstack-app-shan/assets/163661534/d979bae7-0ef1-4e64-990d-a451bd7fd734)
+# # Boooomm!! IT'S WORK!
